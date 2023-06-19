@@ -11,7 +11,29 @@ const Work = () => {
         <Title>
           Tetris <Badge>2023</Badge>
         </Title>
-        <P>A Game to do at school in Python</P>
+        <P>
+          A Tetris Game made a the school using the{' '}
+          <Link href="https://www.python.org/">Python</Link> language and{' '}
+          <Link href="https://www.pygame.org/news">Pygame</Link> for the GUI
+        </P>
+        <List ml={4} my={4}>
+          <ListItem>
+            <Meta>Website</Meta>
+            <Link href="https://www.python.org/">
+              https://www.python.org/ <ExternalLinkIcon mx="2px" />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Meta>Source</Meta>
+            <Link href="https://github.com/Dwikso/Tetris">
+              https://github.com/Dwikso/Tetris <ExternalLinkIcon />
+            </Link>
+          </ListItem>
+          <ListItem>
+            <Meta>STACK</Meta>
+            <span>Python, PyGame</span>
+          </ListItem>
+        </List>
       </Container>
     </Layout>
   )

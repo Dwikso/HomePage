@@ -1,3 +1,4 @@
+import NextLink from 'next/link'
 import {
   Container,
   Box,
@@ -9,6 +10,7 @@ import {
   Button,
   chakra
 } from '@chakra-ui/react'
+import { ChevronRightIcon } from '@chakra-ui/icons'
 import Section from '../components/section.js'
 import Paragraph from '../components/paragraph.js'
 import { BioSection, BioYear } from '../components/bio.js'
@@ -20,7 +22,7 @@ const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
-const Page = () => {
+const Home = () => {
   return (
     <Container>
       <Box
@@ -67,6 +69,17 @@ const Page = () => {
           the web domain. I aspire to become a software engineer because it s a
           job that I love and that interests me.
         </Paragraph>
+        <Box align="center" my={4}>
+          <Button
+            as={NextLink}
+            href="/work"
+            scroll={false}
+            rightIcon={<ChevronRightIcon />}
+            colorScheme="teal"
+          >
+            My Works
+          </Button>
+        </Box>
       </Section>
 
       <Section delay={0.2}>
@@ -129,4 +142,4 @@ const Page = () => {
   )
 }
 
-export default Page
+export default Home
