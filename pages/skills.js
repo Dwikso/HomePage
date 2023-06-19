@@ -1,4 +1,4 @@
-import { Container, Heading, SimpleGrid, Link, Button } from '@chakra-ui/react'
+import { Container, Heading, SimpleGrid, Link } from '@chakra-ui/react'
 import Section from '../components/section'
 
 const Skills = () => {
