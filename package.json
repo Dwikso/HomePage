@@ -1,0 +1,31 @@
+{
+  "name": "quentin-homepage",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "start": "next start",
+    "prettier": "prettier --write",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@chakra-ui/icons": "^2.0.19",
+    "@chakra-ui/react": "^2.7.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/styled": "^11.11.0",
+    "eslint": "^8.43.0",
+    "eslint-config-next": "^13.4.6",
+    "framer-motion": "^10.12.16",
+    "next": "^13.4.6",
+    "prettier": "^2.8.8",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "dependencies": {
+    "react-icons": "^4.9.0"
+  }
+}
