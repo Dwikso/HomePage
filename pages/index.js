@@ -3,16 +3,22 @@ import {
   Box,
   Heading,
   useColorModeValue,
-  Image,
   Link,
   List,
   ListItem,
-  Button
+  Button,
+  chakra
 } from '@chakra-ui/react'
 import Section from '../components/section.js'
 import Paragraph from '../components/paragraph.js'
 import { BioSection, BioYear } from '../components/bio.js'
 import { IoLogoTwitter, IoLogoGithub } from 'react-icons/io5'
+import Image from 'next/image'
+import profilePictures from '../image/pp.jpg'
+
+const ProfileImage = chakra(Image, {
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+})
 
 const Page = () => {
   return (
@@ -41,15 +47,12 @@ const Page = () => {
           ml={{ md: 6 }}
           align="center"
         >
-          <Image
-            borderColor="whiteAlpha.800"
-            borderWidth={2}
-            borderStyle="solid"
-            maxWidth="100px"
-            display="inline-block"
-            border-radius="full"
-            src="/image/dwikso.jpg"
-            alt="Profile Image"
+          <ProfileImage
+            src={profilePictures}
+            alt="Profile Pictures"
+            borderRadius="full"
+            width="100"
+            height="100"
           />
         </Box>
       </Box>
