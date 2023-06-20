@@ -12,11 +12,14 @@ import {
   MenuList,
   MenuButton,
   IconButton,
+  Button,
   useColorModeValue
 } from '@chakra-ui/react'
 import { HamburgerIcon } from '@chakra-ui/icons'
 import ThemeToggleButton from './theme-toggle-button'
 import { IoLogoGithub } from 'react-icons/io5'
+import useTranslation from 'next-translate/useTranslation'
+import { HiTranslate } from 'react-icons/hi'
 
 const LinkItem = ({ href, path, target, children, ...props }) => {
   const active = path === href
@@ -42,6 +45,7 @@ const MenuLink = forwardRef((props, ref) => (
 ))
 
 const Navbar = props => {
+  const { t } = useTranslation('common')
   const { path } = props
 
   return (
@@ -77,7 +81,7 @@ const Navbar = props => {
           mt={{ base: 4, md: 0 }}
         >
           <LinkItem href="/work" path={path}>
-            Works
+            {t('works')}
           </LinkItem>
           <LinkItem
             target="_blank"
@@ -98,33 +102,50 @@ const Navbar = props => {
 
         <Box flex={1} align="right">
           <ThemeToggleButton />
-
-          <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+          <Box ml={2} display={{ base: 'inline-block' }}>
             <Menu isLazy id="navbar-menu">
               <MenuButton
                 as={IconButton}
-                icon={<HamburgerIcon />}
+                icon={<HiTranslate />}
                 variant="outline"
                 aria-label="Options"
               />
               <MenuList>
-                <MenuItem as={MenuLink} href="/">
-                  About
+                <MenuItem as={MenuLink} href="/" locale="fr">
+                  FR
                 </MenuItem>
-                <MenuItem as={MenuLink} href="/work">
-                  Works
-                </MenuItem>
-
-                <MenuItem as={Link} href="/skills">
-                  Skills
-                </MenuItem>
-
-                <MenuItem as={Link} href="https://github.com/Dwikso">
-                  <IoLogoGithub />
-                  Github
+                <MenuItem as={MenuLink} href="/" locale="en">
+                  ENG
                 </MenuItem>
               </MenuList>
             </Menu>
+            <Box ml={2} display={{ base: 'inline-block', md: 'none' }}>
+              <Menu isLazy id="navbar-menu">
+                <MenuButton
+                  as={IconButton}
+                  icon={<HamburgerIcon />}
+                  variant="outline"
+                  aria-label="Options"
+                />
+                <MenuList>
+                  <MenuItem as={MenuLink} href="/">
+                    {t('about')}
+                  </MenuItem>
+                  <MenuItem as={MenuLink} href="/work">
+                    {t('works')}
+                  </MenuItem>
+
+                  <MenuItem as={Link} href="/skills">
+                    Skills
+                  </MenuItem>
+
+                  <MenuItem as={Link} href="https://github.com/Dwikso">
+                    <IoLogoGithub />
+                    Github
+                  </MenuItem>
+                </MenuList>
+              </Menu>
+            </Box>
           </Box>
         </Box>
       </Container>

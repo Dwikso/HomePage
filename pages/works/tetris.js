@@ -12,8 +12,10 @@ import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
 import Layout from '../../components/layout/article'
+import useTranslation from 'next-translate/useTranslation'
 
 const Work = () => {
+  const { t } = useTranslation('common')
   return (
     <Layout title="Tetris">
       <Container>
@@ -21,9 +23,7 @@ const Work = () => {
           Tetris <Badge>2023</Badge>
         </Title>
         <P>
-          A Tetris Game made a the school using the{' '}
-          <Link href="https://www.python.org/">Python</Link> language and{' '}
-          <Link href="https://www.pygame.org/news">Pygame</Link> for the GUI
+          {t('tetris-intro')} <Link href="https://www.python.org/">Python</Link>{' '}
         </P>
         <List ml={4} my={4}>
           <ListItem>
@@ -45,7 +45,7 @@ const Work = () => {
         </List>
         <Box my={6} align="center">
           <Button as={NextLink} href="/" colorScheme="teal">
-            Return to Home
+            {t('home')}
           </Button>
         </Box>
       </Container>

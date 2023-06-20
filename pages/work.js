@@ -13,8 +13,11 @@ import picturesprofile from '../image/works/Tetris.jpeg'
 import BIRDS from 'vanta/dist/vanta.birds.min.js'
 import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
+import useTranslation from 'next-translate/useTranslation'
 
 const Works = () => {
+  const { t } = useTranslation('common')
+
   const [vantaEffect, setVantaEffect] = useState(0)
   const vantaRef = useRef(null)
   useEffect(() => {
@@ -34,15 +37,14 @@ const Works = () => {
   return (
     <Container ref={vantaRef}>
       <Heading as="h3" fontSize={20} mb={3}>
-        Works
+        {t('works')}
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
           <WorkGridItem id="tetris" title="Tetris" thumbnail={picturesprofile}>
-            A Tetris Game made a the school using the{' '}
-            <Link href="https://www.python.org/">Python</Link> language and{' '}
-            <Link href="https://www.pygame.org/news">Pygame</Link> for the GUI
+            {t('tetris-intro')}{' '}
+            <Link href="https://www.python.org/">Python</Link>
           </WorkGridItem>
         </Section>
       </SimpleGrid>

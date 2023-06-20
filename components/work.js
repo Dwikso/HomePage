@@ -2,6 +2,7 @@ import NextLink from 'next/link'
 import { Heading, Box, Link, Badge } from '@chakra-ui/react'
 import Image from 'next/image'
 import { ChevronRightIcon } from '@chakra-ui/icons'
+import useTranslation from 'next-translate/useTranslation'
 
 export const Title = ({ children }) => (
   <Box>

@@ -20,12 +20,15 @@ import profilePictures from '../image/pp.jpg'
 import BIRDS from 'vanta/dist/vanta.birds.min.js'
 import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
+import useTranslation from 'next-translate/useTranslation'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
 const Home = () => {
+  const { t } = useTranslation('common')
+
   const [vantaEffect, setVantaEffect] = useState(0)
   const vantaRef = useRef(null)
   useEffect(() => {
@@ -60,7 +63,7 @@ const Home = () => {
         mt={8}
         align="center"
       >
-        Hello, I&apos;m a Web Developer based in France !
+        {t('first-intro')}
       </Box>
 
       <Box display={{ md: 'flex' }}>
@@ -68,7 +71,7 @@ const Home = () => {
           <Heading as="h2" variant="page-title">
             Quentin - Dwikso
           </Heading>
-          <p> ( Developer / Students )</p>
+          <p>{t('description')}</p>
         </Box>
         <Box
           flexShrink={0}
@@ -89,13 +92,7 @@ const Home = () => {
         <Heading as="h3" variant="section-title">
           Introduction
         </Heading>
-        <Paragraph>
-          Hello, I introduce myself I am Quentin student in first year of
-          computer science in a university in France. I am in learning of
-          multiple programming languages, frameworks and everything related to
-          the web domain. I aspire to become a software engineer because it s a
-          job that I love and that interests me.
-        </Paragraph>
+        <Paragraph>{t('introduction')}</Paragraph>
         <Box align="center" my={4}>
           <Button
             as={NextLink}
@@ -104,7 +101,7 @@ const Home = () => {
             rightIcon={<ChevronRightIcon />}
             colorScheme="teal"
           >
-            My Works
+            {t('my-works')}
           </Button>
         </Box>
       </Section>
@@ -115,13 +112,11 @@ const Home = () => {
         </Heading>
         <BioSection>
           <BioYear>2004</BioYear>
-          Born in France .
+          {t('born')}
         </BioSection>
         <BioSection>
           <BioYear>2022</BioYear>
-          Obtaining my baccalaureate at Louis-Pasteur high School in
-          Hénin-Beaumont in France, with the specialties
-          Digital-Science-Computer Science (NSI) and Engineering Science (SI)
+          {t('bac')}
         </BioSection>
       </Section>
 
@@ -132,13 +127,13 @@ const Home = () => {
         <Paragraph>
           {' '}
           <Link href="https://open.spotify.com/playlist/3d5KE5nlaCJ90cpjd59lap?si=e13b919b29ca498f">
-            Music
+            {t('music')}
           </Link>
         </Paragraph>
       </Section>
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
-          On the web
+          {t('web')}
         </Heading>
         <List>
           <ListItem>

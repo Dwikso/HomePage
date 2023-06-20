@@ -11,8 +11,10 @@ import Section from '../components/section'
 import BIRDS from 'vanta/dist/vanta.birds.min.js'
 import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
+import useTranslation from 'next-translate/useTranslation'
 
 const Skills = () => {
+  const { t } = useTranslation('common')
   const [vantaEffect, setVantaEffect] = useState(0)
   const vantaRef = useRef(null)
   useEffect(() => {
@@ -57,7 +59,7 @@ const Skills = () => {
       </SimpleGrid>
       <Box my={6} align="center">
         <Button as={NextLink} href="/" colorScheme="teal">
-          Return to Home
+          {t('home')}
         </Button>
       </Box>
     </Container>
