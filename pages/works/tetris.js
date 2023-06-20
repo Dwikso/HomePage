@@ -1,4 +1,13 @@
-import { Container, Badge, Link, List, ListItem } from '@chakra-ui/react'
+import NextLink from 'next/link'
+import {
+  Container,
+  Badge,
+  Link,
+  List,
+  ListItem,
+  Box,
+  Button
+} from '@chakra-ui/react'
 import { ExternalLinkIcon } from '@chakra-ui/icons'
 import { Title, Meta } from '../../components/work'
 import P from '../../components/paragraph'
@@ -34,6 +43,11 @@ const Work = () => {
             <span>Python, PyGame</span>
           </ListItem>
         </List>
+        <Box my={6} align="center">
+          <Button as={NextLink} href="/" colorScheme="teal">
+            Return to Home
+          </Button>
+        </Box>
       </Container>
     </Layout>
   )

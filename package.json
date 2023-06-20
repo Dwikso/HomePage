@@ -27,6 +27,8 @@
   },
   "dependencies": {
     "@chakra-ui/theme-tools": "^2.0.18",
-    "react-icons": "^4.9.0"
+    "react-icons": "^4.9.0",
+    "three": "^0.153.0",
+    "vanta": "^0.5.24"
   }
 }

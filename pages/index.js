@@ -17,14 +17,41 @@ import { BioSection, BioYear } from '../components/bio.js'
 import { IoLogoTwitter, IoLogoGithub } from 'react-icons/io5'
 import Image from 'next/image'
 import profilePictures from '../image/pp.jpg'
+import BIRDS from 'vanta/dist/vanta.birds.min.js'
+import { useEffect, useState, useRef } from 'react'
+import * as THREE from 'three'
 
 const ProfileImage = chakra(Image, {
   shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
 })
 
 const Home = () => {
+  const [vantaEffect, setVantaEffect] = useState(0)
+  const vantaRef = useRef(null)
+  useEffect(() => {
+    if (!vantaEffect) {
+      setVantaEffect(
+        BIRDS({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          scale: 1.0,
+          scaleMobile: 1.0,
+          backgroundAlpha: 0.0,
+          THREE
+        })
+      )
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy()
+    }
+  }, [vantaEffect])
+
   return (
-    <Container>
+    <Container ref={vantaRef}>
       <Box
         borderRadius="lg"
         bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
@@ -60,7 +87,7 @@ const Home = () => {
       </Box>
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
-          Work
+          Introduction
         </Heading>
         <Paragraph>
           Hello, I introduce myself I am Quentin student in first year of
