@@ -40,7 +40,7 @@ const Work = () => {
           </ListItem>
           <ListItem>
             <Meta>STACK</Meta>
-            <span>Python, PyGame</span>
+            <span>Python, Tkinter</span>
           </ListItem>
         </List>
         <Box my={6} align="center">

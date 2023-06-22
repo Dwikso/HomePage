@@ -5,13 +5,23 @@ import {
   SimpleGrid,
   Link,
   Box,
-  Button
+  Button,
+  chakra
 } from '@chakra-ui/react'
 import Section from '../components/section'
 import BIRDS from 'vanta/dist/vanta.birds.min.js'
 import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
 import useTranslation from 'next-translate/useTranslation'
+import Gif from '../components/gif'
+import pythonPictures from '../image/logo/Python.png'
+import javascriptpictures from '../image/logo/JavaScript.png'
+import haskellpictures from '../image/logo/Haskell.png'
+import Image from 'next/image'
+
+const ProfileImage = chakra(Image, {
+  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
+})
 
 const Skills = () => {
   const { t } = useTranslation('common')
@@ -40,20 +50,45 @@ const Skills = () => {
   }, [vantaEffect])
   return (
     <Container ref={vantaRef}>
-      <Heading as="h3" fontSize={20} mb={3}>
+      <Gif />
+      <Heading mt={10} as="h3" fontSize={20} mb={3}>
         Skills
       </Heading>
 
       <SimpleGrid columns={[1, 1, 2]} gap={6}>
         <Section>
-          <Link href="https://www.python.org/">Python</Link>
+          <Link href="https://www.python.org/">
+            Python
+            <ProfileImage
+              src={pythonPictures}
+              alt="python"
+              width="20"
+              height="20"
+            />
+          </Link>
         </Section>
         <Section>
-          <Link> Haskell</Link>
+          <Link href="https://www.haskell.org">
+            Haskell
+            <ProfileImage
+              src={haskellpictures}
+              alt="JavaScript"
+              width="20"
+              height="20"
+            />
+          </Link>
         </Section>
         <Section>
           <Link>
-            <Link>JavaScript</Link>
+            <Link href="https://developer.mozilla.org/fr/docs/Web/JavaScript">
+              JavaScript
+              <ProfileImage
+                src={javascriptpictures}
+                alt="JavaScript"
+                width="20"
+                height="20"
+              />
+            </Link>
           </Link>
         </Section>
       </SimpleGrid>

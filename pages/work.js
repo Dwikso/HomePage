@@ -14,6 +14,7 @@ import BIRDS from 'vanta/dist/vanta.birds.min.js'
 import { useEffect, useState, useRef } from 'react'
 import * as THREE from 'three'
 import useTranslation from 'next-translate/useTranslation'
+import Gif from '../components/gif'
 
 const Works = () => {
   const { t } = useTranslation('common')
@@ -36,7 +37,8 @@ const Works = () => {
   }, [vantaEffect])
   return (
     <Container ref={vantaRef}>
-      <Heading as="h3" fontSize={20} mb={3}>
+      <Gif />
+      <Heading mt={10} as="h3" fontSize={20} mb={3}>
         {t('works')}
       </Heading>
 
@@ -50,7 +52,7 @@ const Works = () => {
       </SimpleGrid>
       <Box my={6} align="center">
         <Button as={NextLink} href="/" colorScheme="teal">
-          Return to Home
+          {t('home')}
         </Button>
       </Box>
     </Container>
