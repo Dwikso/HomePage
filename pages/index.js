@@ -129,6 +129,7 @@ const Home = () => {
           <Link href="https://open.spotify.com/playlist/3d5KE5nlaCJ90cpjd59lap?si=e13b919b29ca498f">
             {t('music')}
           </Link>
+          , Football ⚽, Anime, Manga
         </Paragraph>
       </Section>
       <Section delay={0.3}>
