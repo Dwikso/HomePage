@@ -57,7 +57,7 @@ const Home = () => {
     <Container ref={vantaRef}>
       <Box
         borderRadius="lg"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
+        bg={useColorModeValue('whiteAlpha.600', 'whiteAlpha.200')}
         p={3}
         mb={6}
         mt={8}
